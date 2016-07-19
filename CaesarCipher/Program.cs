@@ -12,7 +12,9 @@ namespace CaesarCipher
         {
             CaesarCipher caeserCipher = new CaesarCipher("abcdefghijklmnopqrstuvwxyz");
             caeserCipher.SetOffset();
-            Console.WriteLine(caeserCipher.Cypher("hello there"));
+            string text = "hello there";
+            Console.WriteLine("Original text: {0}", text);
+            Console.WriteLine("Secret Code: {0}", caeserCipher.Cypher(text));
         }
     }
 }

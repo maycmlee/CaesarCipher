@@ -32,40 +32,36 @@ namespace CaesarCipher
         public void SetOffset()
         {
             Random rand = new Random();
-            offset = rand.Next(0, 6);
+            offset = rand.Next(0, 10);
+            Console.WriteLine(offset);
         }
 
-        // Cyphers a string with given alphabet and current offset.
+        // Loops through a string of characters and .
         public string Cypher(string text)
         {
             string ciphered = "";
-            // Go through each letter in text
             for(int i = 0; i < text.Length; i++)
             {
-                ciphered += FindLetterInAlphabet(text[i]);
+                ciphered += FindOffsetLetter(text[i]);
             }
-            // Find letter in alphabet
-
-            // Find offset letter and add to new string.
             return ciphered;
         }
         #endregion
 
         #region Helper Methods
-        public char FindLetterInAlphabet(char letter)
+        //Finds letter in alphabet and returns offset letter
+        public char FindOffsetLetter(char letter)
         {
+            char newLetter = ' ';
             for(int i = 0; i < alphabet.Length; i++)
             {
                 if (alphabet[i] == letter)
                 {
-                    return alphabet[i + offset];
+                    newLetter = alphabet[(i + offset) % alphabet.Length];
                 }
             }
-
-            throw new System.ArgumentException("Letter not found in alphabet");
+            return newLetter;
         }
         #endregion
-
-
     }
 }

@@ -27,7 +27,23 @@ namespace CaesarCipher
         #endregion
 
         #region Methods
+        // Generates random number for offset
+        public int SetOffset()
+        {
+            Random rand = new Random();
+            return rand.Next(0, 6);
+        }
 
+        // Cyphers a string with given alphabet and current offset.
+        public string Cypher(string text)
+        {
+            // Go through each letter in text
+
+            // Find letter in alphabet
+
+            // Find offset letter and add to new string.
+        }
         #endregion
+
     }
 }

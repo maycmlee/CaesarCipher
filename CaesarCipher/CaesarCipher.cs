@@ -36,7 +36,7 @@ namespace CaesarCipher
             Console.WriteLine(offset);
         }
 
-        // Loops through a string of characters and .
+        // Loops through a string of characters and finds the offset letter.
         public string Cypher(string text)
         {
             string ciphered = "";
@@ -47,6 +47,7 @@ namespace CaesarCipher
             return ciphered;
         }
 
+        // Loops through a string of characters and finds the offset letter.
         public string Decipher(string text)
         {
             string decipher = "";
@@ -60,14 +61,13 @@ namespace CaesarCipher
         #endregion
 
         #region Helper Methods
-        //Finds letter in alphabet and returns offset letter
+        /// <summary>
+        /// Finds letter with offset.
+        /// </summary>
+        /// <param name="letter">Letter from string to be ciphered</param>
+        /// <returns></returns>
         public char FindOffsetLetterCipher(char letter)
         {
-            //// Checks if we are deciphering.  If yes, then negate offset.
-            //if (decipher)
-            //{
-            //    offset = -Math.Abs(offset);
-            //}
             char newLetter = ' ';
             for (int i = 0; i < alphabet.Length; i++)
             {
@@ -79,6 +79,11 @@ namespace CaesarCipher
             return newLetter;
         }
 
+        /// <summary>
+        /// Finds letter that was offsetted in cipher.
+        /// </summary>
+        /// <param name="letter">Letter from ciphered string</param>
+        /// <returns></returns>
         public char DecipherFindOffsetLetter(char letter)
         {
             char newLetter = ' ';
@@ -86,6 +91,7 @@ namespace CaesarCipher
             {
                 if (alphabet[i] == letter)
                 {
+                    // Checks case where offsetted letter is at the end of the alphabet
                     if ((i - offset) < 0)
                     {
                         newLetter = alphabet[alphabet.Length + i - offset];

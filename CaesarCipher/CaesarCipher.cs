@@ -40,9 +40,9 @@ namespace CaesarCipher
         public string Cypher(string text)
         {
             string ciphered = "";
-            for(int i = 0; i < text.Length; i++)
+            for (int i = 0; i < text.Length; i++)
             {
-                ciphered += FindOffsetLetter(text[i], false);
+                ciphered += FindOffsetLetterCipher(text[i]);
             }
             return ciphered;
         }
@@ -50,9 +50,9 @@ namespace CaesarCipher
         public string Decipher(string text)
         {
             string decipher = "";
-            for(int i = 0; i < text.Length; i++)
+            for (int i = 0; i < text.Length; i++)
             {
-                decipher += FindOffsetLetter(text[i], true);
+                decipher += DecipherFindOffsetLetter(text[i]);
             }
 
             return decipher;
@@ -61,24 +61,43 @@ namespace CaesarCipher
 
         #region Helper Methods
         //Finds letter in alphabet and returns offset letter
-        public char FindOffsetLetter(char letter, bool decipher)
+        public char FindOffsetLetterCipher(char letter)
         {
-            // Checks if we are deciphering.  If yes, then negate offset.
-            if (decipher)
-            {
-                offset = -Math.Abs(offset);
-            }
+            //// Checks if we are deciphering.  If yes, then negate offset.
+            //if (decipher)
+            //{
+            //    offset = -Math.Abs(offset);
+            //}
             char newLetter = ' ';
-            for(int i = 0; i < alphabet.Length; i++)
+            for (int i = 0; i < alphabet.Length; i++)
             {
                 if (alphabet[i] == letter)
                 {
-                Console.WriteLine("Offset: {0}", offset);
                     newLetter = alphabet[(i + offset) % alphabet.Length];
                 }
             }
             return newLetter;
         }
-        #endregion
+
+        public char DecipherFindOffsetLetter(char letter)
+        {
+            char newLetter = ' ';
+            for (int i = 0; i < alphabet.Length; i++)
+            {
+                if (alphabet[i] == letter)
+                {
+                    if ((i - offset) < 0)
+                    {
+                        newLetter = alphabet[alphabet.Length + i - offset];
+                    }
+                    else
+                    {
+                        newLetter = alphabet[(i - offset)];
+                    }
+                }
+            }
+            return newLetter;
+            #endregion
+        }
     }
 }

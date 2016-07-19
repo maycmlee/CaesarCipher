@@ -12,11 +12,11 @@ namespace CaesarCipher
         {
             CaesarCipher caeserCipher = new CaesarCipher("abcdefghijklmnopqrstuvwxyz");
             caeserCipher.SetOffset();
-            string text = "hello there";
+            string text = "my name is may";
             Console.WriteLine("Original text: {0}", text);
             string ciphered = caeserCipher.Cypher(text);
-            Console.WriteLine("Secret Code: {0}", ciphered);
-            Console.WriteLine("Secret Code: {0}", caeserCipher.Decipher(ciphered));
+            Console.WriteLine("Ciphered: {0}", ciphered);
+            Console.WriteLine("Deciphered: {0}", caeserCipher.Decipher(ciphered));
         }
     }
 }

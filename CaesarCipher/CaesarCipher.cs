@@ -63,6 +63,7 @@ namespace CaesarCipher
         //Finds letter in alphabet and returns offset letter
         public char FindOffsetLetter(char letter, bool decipher)
         {
+            // Checks if we are deciphering.  If yes, then negate offset.
             if (decipher)
             {
                 offset = -Math.Abs(offset);

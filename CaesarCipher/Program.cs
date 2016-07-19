@@ -14,7 +14,9 @@ namespace CaesarCipher
             caeserCipher.SetOffset();
             string text = "hello there";
             Console.WriteLine("Original text: {0}", text);
-            Console.WriteLine("Secret Code: {0}", caeserCipher.Cypher(text));
+            string ciphered = caeserCipher.Cypher(text);
+            Console.WriteLine("Secret Code: {0}", ciphered);
+            Console.WriteLine("Secret Code: {0}", caeserCipher.Decipher(ciphered));
         }
     }
 }

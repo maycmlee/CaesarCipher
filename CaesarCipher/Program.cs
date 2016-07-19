@@ -10,6 +10,9 @@ namespace CaesarCipher
     {
         static void Main(string[] args)
         {
+            CaesarCipher caeserCipher = new CaesarCipher("abcdefghijklmnopqrstuvwxyz");
+            caeserCipher.SetOffset();
+            Console.WriteLine(caeserCipher.Cypher("hello there"));
         }
     }
 }

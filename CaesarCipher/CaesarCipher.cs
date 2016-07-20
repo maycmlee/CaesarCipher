@@ -62,7 +62,7 @@ namespace CaesarCipher
 
         #region Helper Methods
         /// <summary>
-        /// Finds letter with offset.
+        /// Finds letter with offset to cipher text.
         /// </summary>
         /// <param name="letter">Letter from string to be ciphered</param>
         /// <returns></returns>
@@ -80,7 +80,7 @@ namespace CaesarCipher
         }
 
         /// <summary>
-        /// Finds letter that was offsetted in cipher.
+        /// Finds letter that was offsetted in cipher to decipher text.
         /// </summary>
         /// <param name="letter">Letter from ciphered string</param>
         /// <returns></returns>

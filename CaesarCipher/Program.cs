@@ -10,7 +10,7 @@ namespace CaesarCipher
     {
         static void Main(string[] args)
         {
-            CaesarCipher caeserCipher = new CaesarCipher("abcdefghijklmnopqrstuvwxyz");
+            CaesarCipher caeserCipher = new CaesarCipher("abcdefghijklmnopqrstuvwxyz ");
             caeserCipher.SetOffset();
             string text = "my name is may";
             Console.WriteLine("Original text: {0}", text);

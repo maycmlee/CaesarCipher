@@ -36,7 +36,7 @@ namespace CaesarCipher
             Console.WriteLine(offset);
         }
 
-        // Loops through a string of characters and finds the offset letter.
+        // Loops through a string of characters to get the offset letter.
         public string Cypher(string text)
         {
             string ciphered = "";
